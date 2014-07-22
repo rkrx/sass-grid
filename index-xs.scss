@@ -2,7 +2,7 @@
 
 $screen: xs;
 $screen-min: 0;
-$screen-max: $screen-xs;
+$screen-max: 320;
 
 @import "grid/basics";
 @import "grid/grid";

@@ -1,8 +1,8 @@
 @import "grid/config";
 
 $screen: md;
-$screen-min: $screen-sm;
-$screen-max: $screen-md;
+$screen-min: 480;
+$screen-max: 720;
 
 @import "grid/basics";
 @import "grid/grid";

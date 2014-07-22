@@ -10,11 +10,10 @@ $grid-gutter-width: 6px;
 	}
 }
 
-@mixin grid-container($cols, $screens) {
-	@extend .clearfix;
-
+@mixin grid-container($cols, $screens: xs sm md lg xl) {
 	@each $_screen in $screens {
 		@if $_screen == $screen {
+			@extend .clearfix;
 			width: 100% / $grid-column-count * $cols;
 			float: left;
 			position: relative;
@@ -26,11 +25,10 @@ $grid-gutter-width: 6px;
 	}
 }
 
-@mixin grid-col($cols, $screens) {
-	@extend .clearfix;
-
+@mixin grid-col($cols, $screens: xs sm md lg xl) {
 	@each $_screen in $screens {
 		@if $_screen == $screen {
+			@extend .clearfix;
 			width: 100% / $grid-column-count * $cols;
 			float: left;
 			position: relative;
@@ -39,6 +37,14 @@ $grid-gutter-width: 6px;
 			padding-right: $grid-gutter-width;
 			box-sizing: border-box;
 
+			@content;
+		}
+	}
+}
+
+@mixin grid-show-if($screens: xs sm md lg xl) {
+	@each $_screen in $screens {
+		@if $_screen == $screen {
 			@content;
 		}
 	}

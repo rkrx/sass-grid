@@ -1,7 +1,7 @@
 @import "grid/config";
 
 $screen: xl;
-$screen-min: $screen-xl;
+$screen-min: 1100;
 $screen-max: 99999;
 
 @import "grid/basics";
