@@ -2,7 +2,7 @@ sass-grid
 =========
 > What the hell is this good for? We have plenty of grid frameworks!
 
-I don't want to include tags for different screen-sizes to html-elements ending up to something like:
+I don't want to include tags for different screen-sizes to html-elements ending up with something like:
 
 	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">...</div>
 	
