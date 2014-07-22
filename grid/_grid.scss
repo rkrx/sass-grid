@@ -42,7 +42,7 @@ $grid-gutter-width: 6px;
 	}
 }
 
-@mixin grid-show-if($screens: xs sm md lg xl) {
+@mixin grid-if($screens: xs sm md lg xl) {
 	@each $_screen in $screens {
 		@if $_screen == $screen {
 			@content;
