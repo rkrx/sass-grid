@@ -1,0 +1,15 @@
+@import "grid/config";
+
+$screen: lg;
+$screen-min: $screen-md;
+$screen-max: $screen-lg;
+
+@import "grid/basics";
+@import "grid/grid";
+
+.element {
+	@include grid-col(4, lg xl);
+	@include grid-col(6, md);
+	@include grid-col(12, sm);
+	@include grid-container(6, xs);
+}
