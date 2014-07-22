@@ -10,44 +10,34 @@ $grid-gutter-width: 6px;
 	}
 }
 
-@mixin grid-container($cols, $screens: xs sm md lg xl) {
-	@each $_screen in $screens {
-		@if $_screen == $screen {
-			@extend .clearfix;
-			width: 100% / $grid-column-count * $cols;
-			float: left;
-			position: relative;
-			min-height: 1px;
-			box-sizing: border-box;
-
-			@content;
-		}
-	}
-}
-
-@mixin grid-col($cols, $screens: xs sm md lg xl) {
-	@each $_screen in $screens {
-		@if $_screen == $screen {
-			@extend .clearfix;
-			width: 100% / $grid-column-count * $cols;
-			float: left;
-			position: relative;
-			min-height: 1px;
-			padding-left: $grid-gutter-width;
-			padding-right: $grid-gutter-width;
-			box-sizing: border-box;
-
-			@content;
-		}
-	}
-}
-
 @mixin grid-if($screens: xs sm md lg xl) {
 	@each $_screen in $screens {
 		@if $_screen == $screen {
 			@content;
 		}
 	}
+}
+
+@mixin grid-container($cols, $screens: xs sm md lg xl) {
+	@include grid-if($screens) {
+		@extend .clearfix;
+		width: 100% / $grid-column-count * $cols;
+		float: left;
+		position: relative;
+		min-height: 1px;
+		box-sizing: border-box;
+
+		@content;
+	};
+}
+
+@mixin grid-col($cols, $screens: xs sm md lg xl) {
+	@include grid-container($cols, $screens) {
+		padding-left: $grid-gutter-width;
+		padding-right: $grid-gutter-width;
+
+		@content;
+	};
 }
 
 @mixin grid-pull($cols) {
