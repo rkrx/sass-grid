@@ -10,7 +10,7 @@ I think it is better to have something like:
 
 	<div class="some-class">...</div>
 	
-and (.sass):
+and (.scss):
 
 	.some-class {
 		@include grid-col(3, lg xl);
