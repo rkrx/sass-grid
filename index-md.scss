@@ -1,9 +1,3 @@
-@import "grid/config";
-
 $screen: md;
-$screen-min: 480;
-$screen-max: 720;
 
-@import "grid/basics";
 @import "grid/grid";
-@import "index/bootstrap";
