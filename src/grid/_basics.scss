@@ -1,0 +1,41 @@
+$screen: xl !default;
+
+$grid-column-count: 12 !default;
+$grid-gutter-width: 6px !default;
+
+%grid-clearfix {
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+%grid-container {
+	position: relative;
+	min-height: 1px;
+	box-sizing: border-box;
+}
+
+%grid-negative-margin {
+	margin-left: -$grid-gutter-width;
+	margin-right: -$grid-gutter-width;
+}
+
+%grid-padding {
+	padding-left: $grid-gutter-width;
+	padding-right: $grid-gutter-width;
+}
+
+%grid-float-left {
+	float: left;
+	clear: none;
+}
+
+%grid-float-none {
+	float: none;
+	clear: both;
+}
